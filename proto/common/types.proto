@@ -1,0 +1,103 @@
+syntax = "proto3";
+
+package freightforce.common.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option java_package = "com.freightforce.common.v1";
+option java_multiple_files = true;
+
+// Shipment / load identifier — the pivot key across the platform.
+message ShipmentId {
+  string id = 1;
+  // SSCC-18 (GS1 Serial Shipping Container Code) where applicable.
+  string sscc = 2;
+}
+
+// LocationCode — UN/LOCODE, e.g. "USNYC", "SGSIN".
+message LocationCode {
+  string code = 1;
+  string name = 2;
+  string country_code = 3;  // ISO 3166-1 alpha-2
+}
+
+// Address — postal address with optional geo anchor.
+message Address {
+  string line1 = 1;
+  string line2 = 2;
+  string city = 3;
+  string state = 4;
+  string country_code = 5;  // ISO 3166-1 alpha-2
+  string postal_code = 6;
+  GeoPoint geo = 7;
+  LocationCode locode = 8;
+}
+
+// GeoPoint — WGS84 lat/lon plus optional accuracy and altitude.
+message GeoPoint {
+  double lat = 1;
+  double lon = 2;
+  double accuracy_m = 3;
+  double altitude_m = 4;
+}
+
+// Money — fixed-point monetary amount in minor currency units.
+message Money {
+  string currency_code = 1;  // ISO 4217 (e.g. "USD", "EUR", "INR")
+  int64 minor_units = 2;     // 12345 = 123.45 USD
+}
+
+// Weight — mass with explicit unit.
+message Weight {
+  double value = 1;
+  string unit = 2;  // kg | lb
+}
+
+// Volume — cargo volume with explicit unit.
+message Volume {
+  double value = 1;
+  string unit = 2;  // m3 | ft3
+}
+
+// TemperatureRange — cold-chain setpoint and tolerance band.
+message TemperatureRange {
+  double setpoint_c = 1;
+  double low_c = 2;
+  double high_c = 3;
+}
+
+// Pagination request and response.
+message PageRequest {
+  int32 size = 1;
+  string page_token = 2;
+}
+
+message PageResponse {
+  string next_page_token = 1;
+  int64 total_size = 2;
+}
+
+// AuditMetadata — captured on every privileged write.
+message AuditMetadata {
+  string actor_id = 1;
+  string actor_role = 2;
+  string ip_address = 3;
+  string user_agent = 4;
+  google.protobuf.Timestamp event_time = 5;
+}
+
+// CarrierRef — abstract carrier identifier; resolved by carrier-integration.
+message CarrierRef {
+  string scac = 1;             // Standard Carrier Alpha Code
+  string mode = 2;             // road | air | ocean | rail
+  string name = 3;
+}
+
+// EdiEnvelope — minimal trace info for EDI-originated events.
+message EdiEnvelope {
+  string transaction_set = 1;  // e.g. 850, 856, 810
+  string interchange_id = 2;
+  string sender_id = 3;
+  string receiver_id = 4;
+  google.protobuf.Timestamp received_at = 5;
+}
