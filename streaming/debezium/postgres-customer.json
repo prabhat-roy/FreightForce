@@ -1,0 +1,16 @@
+{
+  "name": "freightforce-customer-postgres",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "tasks.max": "1",
+    "database.hostname": "${POSTGRES_HOST}",
+    "database.port": "5432",
+    "database.user": "${POSTGRES_USER}",
+    "database.password": "${POSTGRES_PASSWORD}",
+    "database.dbname": "freightforce",
+    "topic.prefix": "customer",
+    "publication.name": "freightforce_pub",
+    "slot.name": "freightforce_slot",
+    "snapshot.mode": "exported"
+  }
+}

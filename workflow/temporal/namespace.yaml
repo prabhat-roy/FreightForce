@@ -1,0 +1,8 @@
+apiVersion: temporal.io/v1beta1
+kind: TemporalNamespace
+metadata: { name: freightforce, namespace: temporal-system }
+spec:
+  retentionPeriod: 30d
+  archival:
+    history:    { state: enabled, uri: s3://freightforce-temporal-archive/history }
+    visibility: { state: enabled, uri: s3://freightforce-temporal-archive/visibility }

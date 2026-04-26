@@ -1,0 +1,16 @@
+{
+  "consumer": { "name": "customer-bff" },
+  "provider": { "name": "tariff-service" },
+  "interactions": [
+    {
+      "description": "fetch tariff for customer",
+      "request": { "method": "GET", "path": "/v1/tariff/by-customer/{id}" },
+      "response": {
+        "status": 200,
+        "headers": { "Content-Type": "application/json" },
+        "body": { "rate_class": "RES-TOU-1", "currency": "USD", "block_rates": [] }
+      }
+    }
+  ],
+  "metadata": { "pactSpecification": { "version": "3.0.0" } }
+}

@@ -1,0 +1,12 @@
+name: freightforce
+version: 1.0.0
+profile: freightforce
+model-paths: [models]
+target-path: target
+clean-targets: [target, dbt_packages]
+
+models:
+  freightforce:
+    staging:    { +materialized: view }
+    grid:       { +materialized: incremental }
+    analytics:  { +materialized: table }
