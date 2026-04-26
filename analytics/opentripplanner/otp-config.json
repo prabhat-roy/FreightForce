@@ -1,0 +1,11 @@
+{
+  "build": {
+    "osm": [{ "source": "planet-osm.pbf" }],
+    "gtfs": [{ "source": "feed.zip" }]
+  },
+  "router": {
+    "transitServiceStart": "2024-01-01",
+    "transitServiceEnd":   "2027-12-31",
+    "modes": ["TRANSIT","WALK","BICYCLE","CAR"]
+  }
+}

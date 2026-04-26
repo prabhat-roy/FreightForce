@@ -1,0 +1,5 @@
+image: { repository: osrm/osrm-backend, tag: v5.27.1 }
+profiles: [car, truck]
+data: { source: planet-osm, region: world }
+persistence: { enabled: true, storageClass: gp3, size: 500Gi }
+service: { type: ClusterIP, port: 5000 }

@@ -1,0 +1,7 @@
+image: { repository: israelhikingmap/graphhopper, tag: 9.1 }
+profiles: [car, truck]
+data: { source: planet-osm, region: world }
+persistence: { enabled: true, storageClass: gp3, size: 500Gi }
+ingress:
+  enabled: true
+  hosts: [{ host: graphhopper.freightforce.internal }]
