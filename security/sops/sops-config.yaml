@@ -1,0 +1,7 @@
+creation_rules:
+  - path_regex: secrets/freightforce/.*\.yaml
+    kms: arn:aws:kms:us-east-1:111111111111:alias/freightforce-sops
+  - path_regex: secrets/freightforce/gcp/.*\.yaml
+    gcp_kms: projects/freightforce-prod/locations/global/keyRings/freightforce/cryptoKeys/sops
+  - path_regex: secrets/freightforce/azure/.*\.yaml
+    azure_keyvault: https://freightforce-kv.vault.azure.net/keys/sops/abc123

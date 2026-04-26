@@ -1,0 +1,10 @@
+clusterName: freightforce.teleport.internal
+authentication:
+  type: github
+  githubConnector:
+    name: github
+    redirectUrl: https://teleport.freightforce.internal/v1/webapi/github/callback
+kubeClusterName: freightforce-prod
+ingress:
+  enabled: true
+  hostname: teleport.freightforce.internal

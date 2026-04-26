@@ -1,0 +1,12 @@
+catalog:
+  name: freightforce_lake
+  type: rest
+  uri: https://nessie.freightforce.internal/iceberg
+warehouse: s3://freightforce-data-lake/warehouse
+io:
+  s3:
+    endpoint: https://s3.amazonaws.com
+    region: us-east-1
+table-default:
+  write.format.default: parquet
+  write.metadata.compression-codec: gzip
