@@ -1,0 +1,2 @@
+﻿# OpenLR — map-agnostic location referencing
+openlr: { decoder: { enabled: true }, encoder: { enabled: true }, base-map: tomtom }

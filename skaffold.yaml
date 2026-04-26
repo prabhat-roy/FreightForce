@@ -1,0 +1,16 @@
+﻿# Skaffold pipeline for FreightForce
+apiVersion: skaffold/v4beta11
+kind: Config
+metadata: { name: freightforce }
+build:
+  artifacts:
+    - { image: freightforce/api-gateway, context: src/api-gateway }
+    - { image: freightforce/identity-service, context: src/identity-service }
+  local: { push: false }
+deploy:
+  helm:
+    releases:
+      - { name: api-gateway, chartPath: helm/charts/api-gateway, namespace: freightforce }
+profiles:
+  - name: prod
+    deploy: { kubectl: { manifests: ["manifests/prod/*.yaml"] } }

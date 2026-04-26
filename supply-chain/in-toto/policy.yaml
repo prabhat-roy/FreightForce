@@ -1,0 +1,9 @@
+﻿# in-toto layout — supply-chain step attestations for FreightForce
+expires: "2027-01-01T00:00:00Z"
+keys: { project-key: { keyid: freightforce-key, keytype: ed25519, scheme: ed25519 } }
+steps:
+  - { name: source, expected_command: ["git", "clone"], pubkeys: [freightforce-key] }
+  - { name: build, expected_command: ["docker", "build"], pubkeys: [freightforce-key] }
+  - { name: test, expected_command: ["make", "test"], pubkeys: [freightforce-key] }
+inspect:
+  - { name: signed-image, run: ["cosign", "verify"], expected_materials: [], expected_products: [] }

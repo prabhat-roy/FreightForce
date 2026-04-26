@@ -1,0 +1,6 @@
+﻿# Sourcegraph (OSS) — universal code search across FreightForce
+image: { repository: sourcegraph/server, tag: 5.5.0 }
+sourcegraph:
+  externalURL: https://sourcegraph.freightforce.internal
+  repositoriesToAdd: [github.com/prabhat-roy/FreightForce]
+ingress: { enabled: true, hosts: [{ host: sourcegraph.freightforce.internal }] }

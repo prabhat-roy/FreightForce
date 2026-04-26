@@ -1,0 +1,3 @@
+﻿# Valhalla — open routing engine (Mapbox donation)
+image: { repository: gisops/valhalla, tag: latest }
+valhalla: { tile-extracts: [europe, north-america, asia], multimodal: true }

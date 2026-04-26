@@ -1,7 +1,9 @@
-apiVersion: backstage.io/v1alpha1
+﻿apiVersion: backstage.io/v1alpha1
 kind: System
-metadata:
-  name: freightforce
-  description: Smart Grid & Energy Management Platform
-spec:
-  owner: freightforce-platform
+metadata: { name: freightforce, description: FreightForce enterprise platform }
+spec: { owner: platform-team, domain: freightforce }
+---
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata: { name: freightforce }
+spec: { owner: platform-team }

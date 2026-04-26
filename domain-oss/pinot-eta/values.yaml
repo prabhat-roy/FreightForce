@@ -1,0 +1,3 @@
+﻿# Apache Pinot — real-time ETA OLAP
+image: { repository: apachepinot/pinot, tag: 1.2.0 }
+pinot: { schemas: [eta-history, lane-throughput, dwell-time] }

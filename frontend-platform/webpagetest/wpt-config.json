@@ -1,0 +1,7 @@
+﻿{
+  "server": "https://wpt.freightforce.internal",
+  "tests": [
+    { "url": "https://www.freightforce.internal/", "location": "Dulles:Chrome", "runs": 3, "connectivity": "4G" },
+    { "url": "https://app.freightforce.internal/", "location": "Mumbai:Chrome", "runs": 3, "connectivity": "Cable" }
+  ]
+}

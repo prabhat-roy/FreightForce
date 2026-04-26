@@ -1,0 +1,3 @@
+﻿# GraphHopper — open routing engine
+image: { repository: israelhikingmap/graphhopper, tag: latest }
+graphhopper: { profiles: [car, truck, bike, foot], ch: { enabled: true } }
