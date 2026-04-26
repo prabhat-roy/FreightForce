@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "excursion-alert.fullname" . }}
+  labels: {{- include "excursion-alert.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - { port: {{ .Values.service.port }}, targetPort: http, protocol: TCP, name: http }
+  selector: {{- include "excursion-alert.selectorLabels" . | nindent 4 }}

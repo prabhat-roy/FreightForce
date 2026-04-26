@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "milestone-service.fullname" . }}
+  labels: {{- include "milestone-service.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - { port: {{ .Values.service.port }}, targetPort: http, protocol: TCP, name: http }
+  selector: {{- include "milestone-service.selectorLabels" . | nindent 4 }}

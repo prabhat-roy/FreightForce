@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "maintenance-scheduler.fullname" . }}
+  labels: {{- include "maintenance-scheduler.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - { port: {{ .Values.service.port }}, targetPort: http, protocol: TCP, name: http }
+  selector: {{- include "maintenance-scheduler.selectorLabels" . | nindent 4 }}
