@@ -1,0 +1,11 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata: { name: freightforce, namespace: argocd }
+spec:
+  description: FreightForce platform applications
+  sourceRepos: [https://github.com/prabhat-roy/FreightForce.git]
+  destinations:
+    - { namespace: freightforce,    server: https://kubernetes.default.svc }
+    - { namespace: 'freightforce-*', server: https://kubernetes.default.svc }
+  clusterResourceWhitelist:    [{ group: '*', kind: '*' }]
+  namespaceResourceWhitelist:  [{ group: '*', kind: '*' }]

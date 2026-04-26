@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata: { name: freightforce-azure, namespace: argocd }
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/prabhat-roy/FreightForce.git
+        revision: HEAD
+        directories: [{ path: helm/charts/* }]
+  template:
+    metadata:
+      name: '{{path.basename}}-azure'
+      labels: { cloud: azure, freightforce.io/managed-by: argocd }
+    spec:
+      project: freightforce
+      source:
+        repoURL: https://github.com/prabhat-roy/FreightForce.git
+        targetRevision: HEAD
+        path: '{{path}}'
+        helm:
+          valueFiles: [values.yaml, values-azure.yaml]
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: freightforce
+      syncPolicy:
+        automated: { prune: true, selfHeal: true }
+        syncOptions: [CreateNamespace=true, ServerSideApply=true]
