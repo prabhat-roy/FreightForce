@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demand-forecasting
+  namespace: freightforce
+  labels:
+    app.kubernetes.io/name: demand-forecasting
+    app.kubernetes.io/part-of: freightforce
+    freightforce.io/domain: analytics
+spec:
+  replicas: 2
+  selector: { matchLabels: { app.kubernetes.io/name: demand-forecasting } }
+  template:
+    metadata:
+      labels: { app.kubernetes.io/name: demand-forecasting, freightforce.io/domain: analytics }
+    spec:
+      serviceAccountName: demand-forecasting
+      securityContext: { runAsNonRoot: true, runAsUser: 1000, fsGroup: 1000 }
+      containers:
+        - name: demand-forecasting
+          image: harbor.freightforce.internal/freightforce/demand-forecasting:latest
+          ports: [{ containerPort: 50140, name: http }]
+          envFrom: [{ configMapRef: { name: demand-forecasting } }]
+          livenessProbe:  { httpGet: { path: /healthz, port: 50140 }, initialDelaySeconds: 15 }
+          readinessProbe: { httpGet: { path: /healthz, port: 50140 }, initialDelaySeconds: 5 }
+          resources:
+            requests: { cpu: 100m, memory: 128Mi }
+            limits:   { cpu: 1000m, memory: 512Mi }
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: { drop: ["ALL"] }

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: demand-forecasting
+  namespace: freightforce
+  labels: { app.kubernetes.io/name: demand-forecasting, freightforce.io/domain: analytics }
+spec:
+  type: ClusterIP
+  ports: [{ name: http, port: 50140, targetPort: 50140 }]
+  selector: { app.kubernetes.io/name: demand-forecasting }

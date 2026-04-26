@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: supplier-portal
+  namespace: freightforce
+  labels: { app.kubernetes.io/name: supplier-portal, freightforce.io/domain: supplier-portal }
+data:
+  LOG_LEVEL: info
+  PORT: "50120"

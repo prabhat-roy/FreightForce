@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: audit-pay
+  namespace: freightforce
+  labels: { app.kubernetes.io/name: audit-pay, freightforce.io/domain: billing }
+data:
+  LOG_LEVEL: info
+  PORT: "50103"

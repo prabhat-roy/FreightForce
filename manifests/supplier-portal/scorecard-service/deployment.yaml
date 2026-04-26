@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scorecard-service
+  namespace: freightforce
+  labels:
+    app.kubernetes.io/name: scorecard-service
+    app.kubernetes.io/part-of: freightforce
+    freightforce.io/domain: supplier-portal
+spec:
+  replicas: 2
+  selector: { matchLabels: { app.kubernetes.io/name: scorecard-service } }
+  template:
+    metadata:
+      labels: { app.kubernetes.io/name: scorecard-service, freightforce.io/domain: supplier-portal }
+    spec:
+      serviceAccountName: scorecard-service
+      securityContext: { runAsNonRoot: true, runAsUser: 1000, fsGroup: 1000 }
+      containers:
+        - name: scorecard-service
+          image: harbor.freightforce.internal/freightforce/scorecard-service:latest
+          ports: [{ containerPort: 50122, name: http }]
+          envFrom: [{ configMapRef: { name: scorecard-service } }]
+          livenessProbe:  { httpGet: { path: /healthz, port: 50122 }, initialDelaySeconds: 15 }
+          readinessProbe: { httpGet: { path: /healthz, port: 50122 }, initialDelaySeconds: 5 }
+          resources:
+            requests: { cpu: 100m, memory: 128Mi }
+            limits:   { cpu: 1000m, memory: 512Mi }
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: { drop: ["ALL"] }

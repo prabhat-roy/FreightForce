@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: audit-pay
+  namespace: freightforce
+  labels:
+    app.kubernetes.io/name: audit-pay
+    app.kubernetes.io/part-of: freightforce
+    freightforce.io/domain: billing
+spec:
+  replicas: 2
+  selector: { matchLabels: { app.kubernetes.io/name: audit-pay } }
+  template:
+    metadata:
+      labels: { app.kubernetes.io/name: audit-pay, freightforce.io/domain: billing }
+    spec:
+      serviceAccountName: audit-pay
+      securityContext: { runAsNonRoot: true, runAsUser: 1000, fsGroup: 1000 }
+      containers:
+        - name: audit-pay
+          image: harbor.freightforce.internal/freightforce/audit-pay:latest
+          ports: [{ containerPort: 50103, name: http }]
+          envFrom: [{ configMapRef: { name: audit-pay } }]
+          livenessProbe:  { httpGet: { path: /healthz, port: 50103 }, initialDelaySeconds: 15 }
+          readinessProbe: { httpGet: { path: /healthz, port: 50103 }, initialDelaySeconds: 5 }
+          resources:
+            requests: { cpu: 100m, memory: 128Mi }
+            limits:   { cpu: 1000m, memory: 512Mi }
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: { drop: ["ALL"] }

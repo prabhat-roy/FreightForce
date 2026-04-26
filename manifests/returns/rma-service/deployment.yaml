@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rma-service
+  namespace: freightforce
+  labels:
+    app.kubernetes.io/name: rma-service
+    app.kubernetes.io/part-of: freightforce
+    freightforce.io/domain: returns
+spec:
+  replicas: 2
+  selector: { matchLabels: { app.kubernetes.io/name: rma-service } }
+  template:
+    metadata:
+      labels: { app.kubernetes.io/name: rma-service, freightforce.io/domain: returns }
+    spec:
+      serviceAccountName: rma-service
+      securityContext: { runAsNonRoot: true, runAsUser: 1000, fsGroup: 1000 }
+      containers:
+        - name: rma-service
+          image: harbor.freightforce.internal/freightforce/rma-service:latest
+          ports: [{ containerPort: 50080, name: http }]
+          envFrom: [{ configMapRef: { name: rma-service } }]
+          livenessProbe:  { httpGet: { path: /healthz, port: 50080 }, initialDelaySeconds: 15 }
+          readinessProbe: { httpGet: { path: /healthz, port: 50080 }, initialDelaySeconds: 5 }
+          resources:
+            requests: { cpu: 100m, memory: 128Mi }
+            limits:   { cpu: 1000m, memory: 512Mi }
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: { drop: ["ALL"] }

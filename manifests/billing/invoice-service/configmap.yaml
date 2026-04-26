@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: invoice-service
+  namespace: freightforce
+  labels: { app.kubernetes.io/name: invoice-service, freightforce.io/domain: billing }
+data:
+  LOG_LEVEL: info
+  PORT: "50101"

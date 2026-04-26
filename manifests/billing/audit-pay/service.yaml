@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: audit-pay
+  namespace: freightforce
+  labels: { app.kubernetes.io/name: audit-pay, freightforce.io/domain: billing }
+spec:
+  type: ClusterIP
+  ports: [{ name: http, port: 50103, targetPort: 50103 }]
+  selector: { app.kubernetes.io/name: audit-pay }

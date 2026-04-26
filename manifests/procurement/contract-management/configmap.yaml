@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: contract-management
+  namespace: freightforce
+  labels: { app.kubernetes.io/name: contract-management, freightforce.io/domain: procurement }
+data:
+  LOG_LEVEL: info
+  PORT: "50001"

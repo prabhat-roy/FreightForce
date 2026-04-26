@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pick-pack-service
+  namespace: freightforce
+  labels: { app.kubernetes.io/name: pick-pack-service, freightforce.io/domain: warehouse }
+data:
+  LOG_LEVEL: info
+  PORT: "50022"

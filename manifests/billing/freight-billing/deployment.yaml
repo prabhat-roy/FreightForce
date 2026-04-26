@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: freight-billing
+  namespace: freightforce
+  labels:
+    app.kubernetes.io/name: freight-billing
+    app.kubernetes.io/part-of: freightforce
+    freightforce.io/domain: billing
+spec:
+  replicas: 2
+  selector: { matchLabels: { app.kubernetes.io/name: freight-billing } }
+  template:
+    metadata:
+      labels: { app.kubernetes.io/name: freight-billing, freightforce.io/domain: billing }
+    spec:
+      serviceAccountName: freight-billing
+      securityContext: { runAsNonRoot: true, runAsUser: 1000, fsGroup: 1000 }
+      containers:
+        - name: freight-billing
+          image: harbor.freightforce.internal/freightforce/freight-billing:latest
+          ports: [{ containerPort: 50100, name: http }]
+          envFrom: [{ configMapRef: { name: freight-billing } }]
+          livenessProbe:  { httpGet: { path: /healthz, port: 50100 }, initialDelaySeconds: 15 }
+          readinessProbe: { httpGet: { path: /healthz, port: 50100 }, initialDelaySeconds: 5 }
+          resources:
+            requests: { cpu: 100m, memory: 128Mi }
+            limits:   { cpu: 1000m, memory: 512Mi }
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: { drop: ["ALL"] }

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: serial-tracking
+  namespace: freightforce
+  labels: { app.kubernetes.io/name: serial-tracking, freightforce.io/domain: inventory }
+data:
+  LOG_LEVEL: info
+  PORT: "50041"

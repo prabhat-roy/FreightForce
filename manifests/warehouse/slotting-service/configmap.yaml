@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: slotting-service
+  namespace: freightforce
+  labels: { app.kubernetes.io/name: slotting-service, freightforce.io/domain: warehouse }
+data:
+  LOG_LEVEL: info
+  PORT: "50021"

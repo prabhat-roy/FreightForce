@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: disposition-service
+  namespace: freightforce
+  labels: { app.kubernetes.io/name: disposition-service, freightforce.io/domain: returns }
+data:
+  LOG_LEVEL: info
+  PORT: "50081"
