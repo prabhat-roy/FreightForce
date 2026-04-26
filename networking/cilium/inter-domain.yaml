@@ -1,0 +1,11 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata: { name: freightforce-cross-domain-bff-only, namespace: freightforce }
+spec:
+  endpointSelector: { matchLabels: { app.kubernetes.io/part-of: freightforce } }
+  ingress:
+    - fromEndpoints:
+        - matchLabels: { app.kubernetes.io/name: api-gateway }
+        - matchLabels: { app.kubernetes.io/name: ops-bff }
+        - matchLabels: { app.kubernetes.io/name: customer-bff }
+        - matchLabels: { app.kubernetes.io/name: trader-bff }
