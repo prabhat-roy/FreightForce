@@ -1,5 +1,5 @@
-# maintenance-scheduler
+﻿# maintenance-scheduler
 
 Predictive and preventive vehicle maintenance.
 
-**Domain:** `fleet` · **Language:** Go · **Port:** 50123
+Domain: `fleet` Â· Language: Go Â· Port: 50123

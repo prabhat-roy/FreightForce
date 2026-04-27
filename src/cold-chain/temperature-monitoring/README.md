@@ -1,5 +1,5 @@
-# temperature-monitoring
+﻿# temperature-monitoring
 
 Ingests temperature traces from MQTT into TimescaleDB.
 
-**Domain:** `cold-chain` · **Language:** Kotlin/Spring · **Port:** 50161
+Domain: `cold-chain` Â· Language: Kotlin/Spring Â· Port: 50161

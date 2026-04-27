@@ -1,8 +1,8 @@
-# onboarding-service
+﻿# onboarding-service
 
-Service in the **supplier-portal** domain of FreightForce.
+Service in the supplier-portal domain of FreightForce.
 
-**Language:** Go · **Port:** 50121
+Language: Go Â· Port: 50121
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/onboarding-service/](../../../helm/charts/onboarding-service/) — Helm chart
-- [manifests/supplier-portal/onboarding-service/](../../../manifests/supplier-portal/onboarding-service/) — Raw K8s manifests
+- [helm/charts/onboarding-service/](../../../helm/charts/onboarding-service/) â€” Helm chart
+- [manifests/supplier-portal/onboarding-service/](../../../manifests/supplier-portal/onboarding-service/) â€” Raw K8s manifests

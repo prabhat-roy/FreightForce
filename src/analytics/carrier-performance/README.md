@@ -1,8 +1,8 @@
-# carrier-performance
+﻿# carrier-performance
 
-Service in the **analytics** domain of FreightForce.
+Service in the analytics domain of FreightForce.
 
-**Language:** Go · **Port:** 50142
+Language: Go Â· Port: 50142
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/carrier-performance/](../../../helm/charts/carrier-performance/) — Helm chart
-- [manifests/analytics/carrier-performance/](../../../manifests/analytics/carrier-performance/) — Raw K8s manifests
+- [helm/charts/carrier-performance/](../../../helm/charts/carrier-performance/) â€” Helm chart
+- [manifests/analytics/carrier-performance/](../../../manifests/analytics/carrier-performance/) â€” Raw K8s manifests

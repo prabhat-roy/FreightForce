@@ -1,8 +1,8 @@
-# pick-pack-service
+﻿# pick-pack-service
 
-Service in the **warehouse** domain of FreightForce.
+Service in the warehouse domain of FreightForce.
 
-**Language:** Go · **Port:** 50022
+Language: Go Â· Port: 50022
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/pick-pack-service/](../../../helm/charts/pick-pack-service/) — Helm chart
-- [manifests/warehouse/pick-pack-service/](../../../manifests/warehouse/pick-pack-service/) — Raw K8s manifests
+- [helm/charts/pick-pack-service/](../../../helm/charts/pick-pack-service/) â€” Helm chart
+- [manifests/warehouse/pick-pack-service/](../../../manifests/warehouse/pick-pack-service/) â€” Raw K8s manifests

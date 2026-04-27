@@ -1,8 +1,8 @@
-# ops-bff
+﻿# ops-bff
 
 Backend-for-frontend for the ops dashboard (React).
 
-**Domain:** `platform` · **Language:** Go · **Port:** 50001
+Domain: `platform` Â· Language: Go Â· Port: 50001
 
 ## Run locally
 

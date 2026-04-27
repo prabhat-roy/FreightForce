@@ -1,8 +1,8 @@
-# lot-tracking
+﻿# lot-tracking
 
-Service in the **inventory** domain of FreightForce.
+Service in the inventory domain of FreightForce.
 
-**Language:** Go · **Port:** 50040
+Language: Go Â· Port: 50040
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/lot-tracking/](../../../helm/charts/lot-tracking/) — Helm chart
-- [manifests/inventory/lot-tracking/](../../../manifests/inventory/lot-tracking/) — Raw K8s manifests
+- [helm/charts/lot-tracking/](../../../helm/charts/lot-tracking/) â€” Helm chart
+- [manifests/inventory/lot-tracking/](../../../manifests/inventory/lot-tracking/) â€” Raw K8s manifests

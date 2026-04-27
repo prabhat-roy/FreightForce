@@ -1,5 +1,5 @@
-# carrier-selection
+﻿# carrier-selection
 
 Multi-carrier rate shopping (LTL, parcel, ocean, air).
 
-**Domain:** `transportation` · **Language:** Go · **Port:** 50103
+Domain: `transportation` Â· Language: Go Â· Port: 50103

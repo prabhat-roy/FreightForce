@@ -1,5 +1,5 @@
-# sensor-aggregator
+﻿# sensor-aggregator
 
 Multi-sensor fusion: GPS + temperature + RFID per shipment.
 
-**Domain:** `iot` · **Language:** Go · **Port:** 50303
+Domain: `iot` Â· Language: Go Â· Port: 50303

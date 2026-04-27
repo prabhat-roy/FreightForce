@@ -1,8 +1,8 @@
-# expiry-management
+﻿# expiry-management
 
-Service in the **inventory** domain of FreightForce.
+Service in the inventory domain of FreightForce.
 
-**Language:** Go · **Port:** 50042
+Language: Go Â· Port: 50042
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/expiry-management/](../../../helm/charts/expiry-management/) — Helm chart
-- [manifests/inventory/expiry-management/](../../../manifests/inventory/expiry-management/) — Raw K8s manifests
+- [helm/charts/expiry-management/](../../../helm/charts/expiry-management/) â€” Helm chart
+- [manifests/inventory/expiry-management/](../../../manifests/inventory/expiry-management/) â€” Raw K8s manifests

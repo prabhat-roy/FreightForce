@@ -1,5 +1,5 @@
-# geolocation-service
+﻿# geolocation-service
 
 GPS positions, geofence evaluation.
 
-**Domain:** `iot` · **Language:** Go · **Port:** 50302
+Domain: `iot` Â· Language: Go Â· Port: 50302

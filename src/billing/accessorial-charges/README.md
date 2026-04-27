@@ -1,8 +1,8 @@
-# accessorial-charges
+﻿# accessorial-charges
 
-Service in the **billing** domain of FreightForce.
+Service in the billing domain of FreightForce.
 
-**Language:** Go · **Port:** 50102
+Language: Go Â· Port: 50102
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/accessorial-charges/](../../../helm/charts/accessorial-charges/) — Helm chart
-- [manifests/billing/accessorial-charges/](../../../manifests/billing/accessorial-charges/) — Raw K8s manifests
+- [helm/charts/accessorial-charges/](../../../helm/charts/accessorial-charges/) â€” Helm chart
+- [manifests/billing/accessorial-charges/](../../../manifests/billing/accessorial-charges/) â€” Raw K8s manifests

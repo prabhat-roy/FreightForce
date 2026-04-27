@@ -1,5 +1,5 @@
-# event-service
+﻿# event-service
 
 Tracking event ingest from Kafka -> Cassandra (append-only, billions of rows).
 
-**Domain:** `tracking` · **Language:** Go · **Port:** 50201
+Domain: `tracking` Â· Language: Go Â· Port: 50201

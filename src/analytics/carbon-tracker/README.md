@@ -1,8 +1,8 @@
-# carbon-tracker
+﻿# carbon-tracker
 
-Service in the **analytics** domain of FreightForce.
+Service in the analytics domain of FreightForce.
 
-**Language:** Go · **Port:** 50143
+Language: Go Â· Port: 50143
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/carbon-tracker/](../../../helm/charts/carbon-tracker/) — Helm chart
-- [manifests/analytics/carbon-tracker/](../../../manifests/analytics/carbon-tracker/) — Raw K8s manifests
+- [helm/charts/carbon-tracker/](../../../helm/charts/carbon-tracker/) â€” Helm chart
+- [manifests/analytics/carbon-tracker/](../../../manifests/analytics/carbon-tracker/) â€” Raw K8s manifests

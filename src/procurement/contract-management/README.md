@@ -1,8 +1,8 @@
-# contract-management
+﻿# contract-management
 
-Service in the **procurement** domain of FreightForce.
+Service in the procurement domain of FreightForce.
 
-**Language:** Go · **Port:** 50001
+Language: Go Â· Port: 50001
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/contract-management/](../../../helm/charts/contract-management/) — Helm chart
-- [manifests/procurement/contract-management/](../../../manifests/procurement/contract-management/) — Raw K8s manifests
+- [helm/charts/contract-management/](../../../helm/charts/contract-management/) â€” Helm chart
+- [manifests/procurement/contract-management/](../../../manifests/procurement/contract-management/) â€” Raw K8s manifests

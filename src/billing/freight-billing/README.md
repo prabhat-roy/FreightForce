@@ -1,8 +1,8 @@
-# freight-billing
+﻿# freight-billing
 
-Service in the **billing** domain of FreightForce.
+Service in the billing domain of FreightForce.
 
-**Language:** Go · **Port:** 50100
+Language: Go Â· Port: 50100
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/freight-billing/](../../../helm/charts/freight-billing/) — Helm chart
-- [manifests/billing/freight-billing/](../../../manifests/billing/freight-billing/) — Raw K8s manifests
+- [helm/charts/freight-billing/](../../../helm/charts/freight-billing/) â€” Helm chart
+- [manifests/billing/freight-billing/](../../../manifests/billing/freight-billing/) â€” Raw K8s manifests

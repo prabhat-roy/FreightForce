@@ -1,5 +1,5 @@
-# tracking-service
+﻿# tracking-service
 
 Shipment track & trace. Read API across Cassandra event archive.
 
-**Domain:** `tracking` · **Language:** Go · **Port:** 50200
+Domain: `tracking` Â· Language: Go Â· Port: 50200

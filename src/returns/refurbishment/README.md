@@ -1,8 +1,8 @@
-# refurbishment
+﻿# refurbishment
 
-Service in the **returns** domain of FreightForce.
+Service in the returns domain of FreightForce.
 
-**Language:** Go · **Port:** 50082
+Language: Go Â· Port: 50082
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/refurbishment/](../../../helm/charts/refurbishment/) — Helm chart
-- [manifests/returns/refurbishment/](../../../manifests/returns/refurbishment/) — Raw K8s manifests
+- [helm/charts/refurbishment/](../../../helm/charts/refurbishment/) â€” Helm chart
+- [manifests/returns/refurbishment/](../../../manifests/returns/refurbishment/) â€” Raw K8s manifests

@@ -1,5 +1,5 @@
-# load-planning
+﻿# load-planning
 
 Load consolidation and trailer planning.
 
-**Domain:** `transportation` · **Language:** Go · **Port:** 50101
+Domain: `transportation` Â· Language: Go Â· Port: 50101

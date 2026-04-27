@@ -1,8 +1,8 @@
-# audit-pay
+﻿# audit-pay
 
-Service in the **billing** domain of FreightForce.
+Service in the billing domain of FreightForce.
 
-**Language:** Go · **Port:** 50103
+Language: Go Â· Port: 50103
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/audit-pay/](../../../helm/charts/audit-pay/) — Helm chart
-- [manifests/billing/audit-pay/](../../../manifests/billing/audit-pay/) — Raw K8s manifests
+- [helm/charts/audit-pay/](../../../helm/charts/audit-pay/) â€” Helm chart
+- [manifests/billing/audit-pay/](../../../manifests/billing/audit-pay/) â€” Raw K8s manifests

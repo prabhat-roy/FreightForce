@@ -1,8 +1,8 @@
-# scorecard-service
+﻿# scorecard-service
 
-Service in the **supplier-portal** domain of FreightForce.
+Service in the supplier-portal domain of FreightForce.
 
-**Language:** Go · **Port:** 50122
+Language: Go Â· Port: 50122
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/scorecard-service/](../../../helm/charts/scorecard-service/) — Helm chart
-- [manifests/supplier-portal/scorecard-service/](../../../manifests/supplier-portal/scorecard-service/) — Raw K8s manifests
+- [helm/charts/scorecard-service/](../../../helm/charts/scorecard-service/) â€” Helm chart
+- [manifests/supplier-portal/scorecard-service/](../../../manifests/supplier-portal/scorecard-service/) â€” Raw K8s manifests

@@ -1,8 +1,8 @@
-# invoice-service
+﻿# invoice-service
 
-Service in the **billing** domain of FreightForce.
+Service in the billing domain of FreightForce.
 
-**Language:** Go · **Port:** 50101
+Language: Go Â· Port: 50101
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/invoice-service/](../../../helm/charts/invoice-service/) — Helm chart
-- [manifests/billing/invoice-service/](../../../manifests/billing/invoice-service/) — Raw K8s manifests
+- [helm/charts/invoice-service/](../../../helm/charts/invoice-service/) â€” Helm chart
+- [manifests/billing/invoice-service/](../../../manifests/billing/invoice-service/) â€” Raw K8s manifests

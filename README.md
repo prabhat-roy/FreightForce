@@ -1,9 +1,9 @@
-# FreightForce — Enterprise Logistics & Supply Chain Platform
+﻿# FreightForce â€” Enterprise Logistics & Supply Chain Platform
 
 Enterprise-grade, cloud-native logistics and supply chain management platform built on open source
-technologies. Covers end-to-end supply chain operations — procurement, warehousing, transportation,
+technologies. Covers end-to-end supply chain operations â€” procurement, warehousing, transportation,
 last-mile delivery, fleet management, cold chain, customs & trade compliance, and supply chain
-visibility — designed for 3PL providers, freight forwarders, manufacturing companies, and retail
+visibility â€” designed for 3PL providers, freight forwarders, manufacturing companies, and retail
 distribution networks.
 
 ---
@@ -12,7 +12,7 @@ distribution networks.
 
 | Attribute         | Value                                                           |
 |-------------------|-----------------------------------------------------------------|
-| Type              | 3PL · TMS · WMS · Fleet Management · Supply Chain Visibility    |
+| Type              | 3PL Â· TMS Â· WMS Â· Fleet Management Â· Supply Chain Visibility    |
 | Domains           | 16 business domains                                             |
 | Services          | 185+ microservices                                              |
 | Languages         | Go, Java, Kotlin, Python, Rust, Node.js, Scala                  |
@@ -52,36 +52,36 @@ distribution networks.
 ## Architecture
 
 ```
-         ┌─────────────────────────────────────────────────────┐
-         │                    API Gateway                       │
-         │         (OAuth2 · mTLS · Rate Limit · WAF)          │
-         └────┬──────────────┬──────────────┬───────────────────┘
-              │              │              │
-     ┌────────▼──────┐ ┌─────▼──────┐ ┌────▼────────────┐
-     │  Ops Dashboard│ │Customer BFF│ │   Driver BFF    │
-     │   (React)     │ │  (React)   │ │  (Flutter App)  │
-     └────────┬──────┘ └─────┬──────┘ └────┬────────────┘
-              │              │              │
-    ┌─────────▼──────────────▼──────────────▼──────────────┐
-    │             Internal gRPC Mesh (Istio mTLS)           │
-    │  ┌──────────┐  ┌────────────┐  ┌────────────────────┐ │
-    │  │   WMS    │  │    TMS     │  │  Fleet & Last Mile │ │
-    │  │ Services │  │  Services  │  │  Services          │ │
-    │  └──────────┘  └────────────┘  └────────────────────┘ │
-    └──────────────────────┬────────────────────────────────┘
-                           │ Kafka (Supply Chain Events)
-          ┌────────────────┴────────────────────┐
-          │                                     │
- ┌────────▼──────────┐               ┌──────────▼──────────┐
- │   IoT Gateway     │               │  Track & Trace      │
- │ MQTT · AWS IoT    │               │  Event Store        │
- │ GPS · Temp · RFID │               │  (Kafka + Cassandra) │
- └───────────────────┘               └─────────────────────┘
-                           │
-       ┌───────────────────▼───────────────────────┐
-       │          Supply Chain Analytics           │
-       │  ClickHouse · Flink · Airflow · Superset  │
-       └───────────────────────────────────────────┘
+         â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+         â”‚                    API Gateway                       â”‚
+         â”‚         (OAuth2 Â· mTLS Â· Rate Limit Â· WAF)          â”‚
+         â””â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+              â”‚              â”‚              â”‚
+     â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â” â”Œâ”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â” â”Œâ”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+     â”‚  Ops Dashboardâ”‚ â”‚Customer BFFâ”‚ â”‚   Driver BFF    â”‚
+     â”‚   (React)     â”‚ â”‚  (React)   â”‚ â”‚  (Flutter App)  â”‚
+     â””â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”˜ â””â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”˜ â””â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+              â”‚              â”‚              â”‚
+    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+    â”‚             Internal gRPC Mesh (Istio mTLS)           â”‚
+    â”‚  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” â”‚
+    â”‚  â”‚   WMS    â”‚  â”‚    TMS     â”‚  â”‚  Fleet & Last Mile â”‚ â”‚
+    â”‚  â”‚ Services â”‚  â”‚  Services  â”‚  â”‚  Services          â”‚ â”‚
+    â”‚  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜ â”‚
+    â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                           â”‚ Kafka (Supply Chain Events)
+          â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+          â”‚                                     â”‚
+ â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”               â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+ â”‚   IoT Gateway     â”‚               â”‚  Track & Trace      â”‚
+ â”‚ MQTT Â· AWS IoT    â”‚               â”‚  Event Store        â”‚
+ â”‚ GPS Â· Temp Â· RFID â”‚               â”‚  (Kafka + Cassandra) â”‚
+ â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜               â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                           â”‚
+       â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+       â”‚          Supply Chain Analytics           â”‚
+       â”‚  ClickHouse Â· Flink Â· Airflow Â· Superset  â”‚
+       â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 ```
 
 ---
@@ -89,58 +89,58 @@ distribution networks.
 ## Tech Stack
 
 ### Logistics Standards & Protocols
-- **EDI X12 / EDIFACT**: Electronic data interchange with suppliers, carriers, and customs (850 PO, 856 ASN, 810 Invoice)
-- **GS1**: SSCC barcode generation (shipment labels), GTIN product identification, EPCIS event tracking
-- **IATA**: Air cargo AWB (Air Waybill) generation and tracking
-- **UN/LOCODE**: Standard location codes for ports and logistics hubs
-- **MQTT**: IoT telemetry protocol for GPS trackers, temperature sensors, and RFID readers
+- EDI X12 / EDIFACT: Electronic data interchange with suppliers, carriers, and customs (850 PO, 856 ASN, 810 Invoice)
+- GS1: SSCC barcode generation (shipment labels), GTIN product identification, EPCIS event tracking
+- IATA: Air cargo AWB (Air Waybill) generation and tracking
+- UN/LOCODE: Standard location codes for ports and logistics hubs
+- MQTT: IoT telemetry protocol for GPS trackers, temperature sensors, and RFID readers
 
 ### Infrastructure
-- **Kubernetes**: EKS + GKE — multi-region; edge nodes at distribution centres for low-latency IoT ingestion
-- **IoT Platform**: AWS IoT Core (MQTT broker) + custom IoT gateway service — 100K+ concurrent device connections
-- **Geospatial**: PostGIS (route history, geofencing); OpenRouteService (self-hosted routing engine)
-- **Time-Series**: TimescaleDB (vehicle telemetry, temperature readings, fuel consumption)
-- **Graph DB**: Neo4j (route network graph, carrier relationship graph)
-- **Real-time**: NATS JetStream for driver dispatch messages (sub-10ms delivery SLA)
+- Kubernetes: EKS + GKE â€” multi-region; edge nodes at distribution centres for low-latency IoT ingestion
+- IoT Platform: AWS IoT Core (MQTT broker) + custom IoT gateway service â€” 100K+ concurrent device connections
+- Geospatial: PostGIS (route history, geofencing); OpenRouteService (self-hosted routing engine)
+- Time-Series: TimescaleDB (vehicle telemetry, temperature readings, fuel consumption)
+- Graph DB: Neo4j (route network graph, carrier relationship graph)
+- Real-time: NATS JetStream for driver dispatch messages (sub-10ms delivery SLA)
 
 ### CI/CD & GitOps
-- **CI**: Jenkins (primary), GitHub Actions, GitLab CI, Tekton
-- **CD**: ArgoCD (App-of-Apps), Argo Rollouts (canary with traffic mirroring for TMS services)
-- **IaC**: Terraform (EKS/GKE + IoT infrastructure), Crossplane, Ansible
-- **Secrets**: HashiCorp Vault + External Secrets Operator
+- CI: Jenkins (primary), GitHub Actions, GitLab CI, Tekton
+- CD: ArgoCD (App-of-Apps), Argo Rollouts (canary with traffic mirroring for TMS services)
+- IaC: Terraform (EKS/GKE + IoT infrastructure), Crossplane, Ansible
+- Secrets: HashiCorp Vault + External Secrets Operator
 
 ### Observability
-- **Metrics**: Prometheus + Grafana (fleet utilisation, on-time delivery %, warehouse throughput)
-- **Logs**: Loki + Fluent Bit
-- **Traces**: Jaeger + OpenTelemetry (trace shipment lifecycle from booking to delivery)
-- **IoT Monitoring**: Real-time fleet map on Grafana (GPS positions, temperature excursions, geofence breaches)
-- **SLOs**: On-time delivery ≥ 98%, cold chain temperature compliance ≥ 99.9%
+- Metrics: Prometheus + Grafana (fleet utilisation, on-time delivery %, warehouse throughput)
+- Logs: Loki + Fluent Bit
+- Traces: Jaeger + OpenTelemetry (trace shipment lifecycle from booking to delivery)
+- IoT Monitoring: Real-time fleet map on Grafana (GPS positions, temperature excursions, geofence breaches)
+- SLOs: On-time delivery â‰¥ 98%, cold chain temperature compliance â‰¥ 99.9%
 
 ### Security
-- **Identity**: Keycloak (staff + customer SSO), driver identity with biometric binding
-- **API Security**: mTLS for all EDI partner connections; OAuth2 for customer-facing APIs
-- **Network**: Cilium eBPF, Istio mTLS, Coraza WAF
-- **Scanning**: Trivy, Semgrep, OWASP ZAP, SonarQube, Checkov (IaC)
-- **Policy**: OPA/Gatekeeper, Kyverno, Falco
+- Identity: Keycloak (staff + customer SSO), driver identity with biometric binding
+- API Security: mTLS for all EDI partner connections; OAuth2 for customer-facing APIs
+- Network: Cilium eBPF, Istio mTLS, Coraza WAF
+- Scanning: Trivy, Semgrep, OWASP ZAP, SonarQube, Checkov (IaC)
+- Policy: OPA/Gatekeeper, Kyverno, Falco
 
 ### AI / ML (Supply Chain Intelligence)
-- **Demand Forecasting**: Time-series forecasting (Facebook Prophet + XGBoost ensemble) on 3 years of shipment history
-- **Route Optimization**: Metaheuristic VRP solver (OR-Tools by Google) — minimise distance, respect time windows
-- **ETA Prediction**: ML model using real-time traffic, weather, and historical delivery data (±5 min accuracy)
-- **Carrier Performance Scoring**: ML-based scorecard (on-time %, damage rate, cost) for carrier selection
-- **Anomaly Detection**: Unsupervised ML on temperature sensor data (Isolation Forest) — early cold chain excursion warning
-- **Carbon Footprint**: Emission calculation per shipment (GLEC framework) — modal shift recommendations
+- Demand Forecasting: Time-series forecasting (Facebook Prophet + XGBoost ensemble) on 3 years of shipment history
+- Route Optimization: Metaheuristic VRP solver (OR-Tools by Google) â€” minimise distance, respect time windows
+- ETA Prediction: ML model using real-time traffic, weather, and historical delivery data (Â±5 min accuracy)
+- Carrier Performance Scoring: ML-based scorecard (on-time %, damage rate, cost) for carrier selection
+- Anomaly Detection: Unsupervised ML on temperature sensor data (Isolation Forest) â€” early cold chain excursion warning
+- Carbon Footprint: Emission calculation per shipment (GLEC framework) â€” modal shift recommendations
 
 ---
 
 ## Key Design Decisions
 
-1. **Event sourcing for shipment lifecycle**: Every shipment state transition is an immutable event (Kafka → Cassandra) — full audit trail, replay capability
-2. **Edge-first IoT**: IoT gateway deployed at warehouse edge nodes — local MQTT broker buffers telemetry during WAN outages, syncs when connectivity restored
-3. **Polyglot persistence by domain**: WMS uses PostgreSQL (transactional); telemetry uses TimescaleDB (time-series); route network uses Neo4j (graph); track & trace uses Cassandra (append-only, high write)
-4. **EDI as first-class citizen**: EDI X12/EDIFACT messages parsed into internal canonical format on ingest — all downstream services work with canonical model
-5. **Driver app offline-first**: Flutter mobile app works fully offline (SQLite local store) — syncs proof of delivery when connectivity restored
-6. **Multi-carrier abstraction**: carrier-integration-service provides unified API — adding a new carrier requires only a new adapter, no changes to TMS core
+1. Event sourcing for shipment lifecycle: Every shipment state transition is an immutable event (Kafka â†’ Cassandra) â€” full audit trail, replay capability
+2. Edge-first IoT: IoT gateway deployed at warehouse edge nodes â€” local MQTT broker buffers telemetry during WAN outages, syncs when connectivity restored
+3. Polyglot persistence by domain: WMS uses PostgreSQL (transactional); telemetry uses TimescaleDB (time-series); route network uses Neo4j (graph); track & trace uses Cassandra (append-only, high write)
+4. EDI as first-class citizen: EDI X12/EDIFACT messages parsed into internal canonical format on ingest â€” all downstream services work with canonical model
+5. Driver app offline-first: Flutter mobile app works fully offline (SQLite local store) â€” syncs proof of delivery when connectivity restored
+6. Multi-carrier abstraction: carrier-integration-service provides unified API â€” adding a new carrier requires only a new adapter, no changes to TMS core
 
 ---
 

@@ -1,5 +1,5 @@
-# tms-service
+﻿# tms-service
 
 Transportation management core: loads, shipments, dispatch, lifecycle.
 
-**Domain:** `transportation` · **Language:** Go · **Port:** 50100
+Domain: `transportation` Â· Language: Go Â· Port: 50100

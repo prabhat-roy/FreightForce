@@ -1,8 +1,8 @@
-# slotting-service
+﻿# slotting-service
 
-Service in the **warehouse** domain of FreightForce.
+Service in the warehouse domain of FreightForce.
 
-**Language:** Go · **Port:** 50021
+Language: Go Â· Port: 50021
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/slotting-service/](../../../helm/charts/slotting-service/) — Helm chart
-- [manifests/warehouse/slotting-service/](../../../manifests/warehouse/slotting-service/) — Raw K8s manifests
+- [helm/charts/slotting-service/](../../../helm/charts/slotting-service/) â€” Helm chart
+- [manifests/warehouse/slotting-service/](../../../manifests/warehouse/slotting-service/) â€” Raw K8s manifests

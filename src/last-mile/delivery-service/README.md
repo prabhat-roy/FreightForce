@@ -1,5 +1,5 @@
-# delivery-service
+﻿# delivery-service
 
 Last-mile delivery orchestration.
 
-**Domain:** `last-mile` · **Language:** Go · **Port:** 50140
+Domain: `last-mile` Â· Language: Go Â· Port: 50140

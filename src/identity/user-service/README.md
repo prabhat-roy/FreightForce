@@ -1,5 +1,5 @@
-# user-service
+﻿# user-service
 
 Staff and customer user accounts.
 
-**Domain:** `identity` · **Language:** Java/Spring · **Port:** 50021
+Domain: `identity` Â· Language: Java/Spring Â· Port: 50021

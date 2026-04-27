@@ -1,8 +1,8 @@
-# disposition-service
+﻿# disposition-service
 
-Service in the **returns** domain of FreightForce.
+Service in the returns domain of FreightForce.
 
-**Language:** Go · **Port:** 50081
+Language: Go Â· Port: 50081
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/disposition-service/](../../../helm/charts/disposition-service/) — Helm chart
-- [manifests/returns/disposition-service/](../../../manifests/returns/disposition-service/) — Raw K8s manifests
+- [helm/charts/disposition-service/](../../../helm/charts/disposition-service/) â€” Helm chart
+- [manifests/returns/disposition-service/](../../../manifests/returns/disposition-service/) â€” Raw K8s manifests

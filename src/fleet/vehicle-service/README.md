@@ -1,5 +1,5 @@
-# vehicle-service
+﻿# vehicle-service
 
 Vehicle registry: VIN, plate, capacity, lifecycle.
 
-**Domain:** `fleet` · **Language:** Go · **Port:** 50121
+Domain: `fleet` Â· Language: Go Â· Port: 50121
