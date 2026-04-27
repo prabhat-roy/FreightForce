@@ -1,0 +1,9 @@
+﻿apiVersion: chaos-mesh.org/v1alpha1
+kind: DNSChaos
+metadata: { name: freightforce-dns-error, namespace: chaos-mesh }
+spec:
+  action: error
+  mode: all
+  patterns: ["*.freightforce.svc.cluster.local"]
+  selector: { namespaces: [freightforce] }
+  duration: 2m

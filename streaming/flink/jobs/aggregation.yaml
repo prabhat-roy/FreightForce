@@ -1,0 +1,10 @@
+﻿apiVersion: flink.apache.org/v1beta1
+kind: FlinkSessionJob
+metadata: { name: freightforce-aggregation, namespace: freightforce }
+spec:
+  deploymentName: freightforce-flink
+  job:
+    jarURI: s3://freightforce-flink-jobs/aggregation.jar
+    parallelism: 8
+    upgradeMode: savepoint
+    args: ["--source-topic", "freightforce.events.enriched", "--sink-topic", "freightforce.metrics.aggregated", "--window", "5m"]

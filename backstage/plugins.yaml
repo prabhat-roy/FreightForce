@@ -1,0 +1,6 @@
+﻿plugins:
+  - { id: tech-radar, config: { url: https://github.com/prabhat-roy/FreightForce/raw/main/backstage/tech-radar.json } }
+  - { id: lighthouse, config: { baseUrl: https://lhci.freightforce.internal } }
+  - { id: opencost,   config: { baseUrl: https://opencost.freightforce.internal } }
+  - { id: argocd,     config: { url: https://argocd.freightforce.internal, token: "${ARGOCD_TOKEN}" } }
+  - { id: kubernetes, config: { clusters: [{ name: freightforce-aws, url: https://eks.freightforce.aws.internal }, { name: freightforce-gcp, url: https://gke.freightforce.gcp.internal }, { name: freightforce-azure, url: https://aks.freightforce.azure.internal }] } }
